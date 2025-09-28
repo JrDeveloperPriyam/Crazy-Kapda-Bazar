@@ -1,6 +1,4 @@
-
 ////////////////////////////////// menu btn /////////////////////////////////////////
-
 document.addEventListener("DOMContentLoaded", () => {
   const menuBtnMobile = document.querySelector('.menu-btn-mobile');
   const sidebarMobile = document.querySelector('#sidebar-mobile');
