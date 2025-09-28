@@ -9,6 +9,7 @@
     "description": "High-top puma sneakers for casual wear.",
     "tags": ["sneakers", "puma", "casual"],
     "price": 3999,
+    "sizes": ["6", "7", "8", "9"],
     "image": ["PumaSneakers/41jpG05LbuL._SY675_.jpg",
     "PumaSneakers/51jWbkdPbcL._SY695_.jpg",
     "PumaSneakers/51gpY9gCB1L._SY695_.jpg",
@@ -23,6 +24,8 @@
     "description": "High-top puma sneakers for casual wear.",
     "tags": ["sneakers", "puma", "casual"],
     "price": 3999,
+    "sizes": ["5", "6", "7", "8"],
+
     "image": ["PumaSneakers/41UBBQq4oWL._SY695_.jpg",
     "PumaSneakers/51vn0OBhWUL._SY695_.jpg",
     "PumaSneakers/41LgkU4ViFL._SY695_.jpg",
@@ -37,6 +40,7 @@
     "description": "High-top t-shirt for casual wear.",
     "tags": ["t-shirt", "levi's", "casual"],
     "price": 500,
+     "sizes": ["S", "M", "L", "XL", "XXL"],
     "image": ["levisTshirt/61d+nxc2eyL._SY741_.jpg",
     "levisTshirt/61fySkqBnGL._SY741_.jpg",
     "levisTshirt/61Om-Tm1CTL._SY741_.jpg",
@@ -51,6 +55,7 @@
     "description": "High-top t-shirt for casual wear.",
     "tags": ["t-shirt", "levi's", "casual"],
     "price": 3999,
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "image": ["levisTshirt/51nU5QDMS7L._SX679_.jpg",
     "levisTshirt/51tJiNIlQ5L._SX679_.jpg",
     "levisTshirt/41HdZS6F-EL._SX679_.jpg",
@@ -66,6 +71,7 @@
     "description": "High-top t-shirt for casual wear.",
     "tags": ["t-shirt", "levi's", "casual"],
     "price": 3999,
+    "sizes": ["30", "32", "34", "36"],
     "image": 
     ["levisTshirt/41Z-+1eq2tL._SX679_.jpg",
     "levisTshirt/51gxGBF5idL._SX569_.jpg",
@@ -82,6 +88,8 @@
     "description": "High-top t-shirt for casual wear.",
     "tags": ["t-shirt", "levi's", "casual"],
     "price": 490,
+    "sizes": ["30", "32", "34", "36"],
+
     "image": 
     ["levisTshirt/51xZqb+FsiL._SY550_.jpg",
     "levisTshirt/51Jtia7ZCbL._SY741_.jpg",
@@ -97,6 +105,7 @@
     "description": "Premium Sneakers for casual wear.",
     "tags": ["levi's", "casual"],
     "price": 6700,
+    "sizes": ["6", "7", "8", "9", "10"],
     "image": 
     ["nikeSneakers/61Cv1KjEBTL._SY695_.jpg",
     "nikeSneakers/61z8mZq7bOL._SY535_.jpg",
@@ -113,6 +122,7 @@
     "description": "Premium Sneakers for casual wear.",
     "tags": ["levi's", "casual"],
     "price": 6700,
+    "sizes": ["6", "7", "8", "9", "10"],
     "image": 
     ["nikeSneakers/61FEBihkm0L._SY695_.jpg",
     "nikeSneakers/61lTKNsZROL._SY695_.jpg",
@@ -129,6 +139,7 @@
     "description": "Premium Sneakers for casual wear.",
     "tags": ["levi's", "casual"],
     "price": 6700,
+    "sizes": ["6", "7", "8", "9", "10"],
     "image": 
     ["nikeSneakers/71y1vXqSIjL._SX695_.jpg",
     "nikeSneakers/714peXrdgVL._SX695_.jpg",
@@ -144,6 +155,7 @@
     "description": "Premium slim fit jeans for men.",
     "tags": ["jeans", "levi's", "casual"],
     "price": 1399,
+    "sizes": ["30", "32", "34", "36"],
     "image": 
     ["jeansMen/jeansm2/51itz3BOlEL._SX679_.jpg",
     "jeansMen/jeansm2/51p2aHFUACL._SX679_.jpg",
@@ -159,6 +171,7 @@
     "description": "Premium slim fit jeans for men.",
     "tags": ["jeans", "levi's", "casual"],
     "price": 1399,
+    "sizes": ["30", "32", "34", "36"],
     "image": 
     ["jeansMen/jeansm2/51PxdWxtDyL._SX522_.jpg",
     "jeansMen/jeansm2/512FFbTfuPL._SX522_.jpg ",
@@ -175,6 +188,7 @@
     "description": "Premium slim fit jeans for men.",
     "tags": ["jeans", "levi's", "casual"],
     "price": 1399,
+    "sizes": ["30", "32", "34", "36"],
     "image": 
    ["jeansMen/jeansm2/51ATHAkSI5L._SX522_.jpg",
     "jeansMen/jeansm2/51VwBBDL50L._SX522_.jpg",
@@ -190,6 +204,7 @@
     "description": "Premium slim fit jeans for men.",
     "tags": ["jeans", "levi's", "casual"],
     "price": 1200,
+    "sizes": ["30", "32", "34", "36"],
     "image": 
     ["jeansMen/jeansm2/51OKY3mabbL._SX679_.jpg",
     "jeansMen/jeansm2/61i4he08c3L._SX679_.jpg",
@@ -204,6 +219,7 @@
     "description": "Premium slim fit jeans for men.",
     "tags": ["jeans", "levi's", "casual"],
     "price": 1720,
+    "sizes": ["30", "32", "34", "36"],
     "image": 
     ["louisPhilippeJeans/51+SSDoV4fL._SY550_.jpg",
     "louisPhilippeJeans/51aye8BCJcL._SY741_.jpg",
@@ -218,6 +234,7 @@
     "description": "Premium Cotton, Pre-Washed for extremely soft finish and No Shrinkage Post Washing",
     "tags": ["full shirt", "Majestic", "cotton", "charcoal grey"],
     "price": 700,
+    "sizes": ["S", "M", "L", "XL"],
     "image": 
     ["majesticMenShirt/71ck9U5rmkL._SY550_.jpg",
     "majesticMenShirt/61yjt8zf+EL._SY741_.jpg",
@@ -233,6 +250,7 @@
     "description": "Premium Cotton, Pre-Washed for extremely soft finish and No Shrinkage Post Washing",
     "tags": ["full shirt", "Dennish ling0", "cotton", "olive"],
     "price": 960,
+    "sizes": ["S", "M", "XL", "XXL"],
     "image": 
     ["DennishLingo/61KNBTw4K8S._SX679_.jpg",
     "DennishLingo/51VMjI1-v4L._SY741_.jpg",
@@ -249,6 +267,7 @@
     "description": "Premium Cotton, Pre-Washed for extremely soft finish and No Shrinkage Post Washing",
     "tags": ["full shirt", "Majestic", "cotton", "charcoal grey"],
     "price": 789,
+    "sizes": ["S", "M", "L", "XXL"],
     "image": 
     ["majesticMenShirt/71V+mg686yL._SY741_.jpg",
     "majesticMenShirt/51aLotERM9L._SY741_.jpg",
@@ -265,6 +284,7 @@
     "description": "Premium Cotton, Pre-Washed for extremely soft finish and No Shrinkage Post Washing",
     "tags": ["full shirt", "Majestic", "cotton", "charcoal grey"],
     "price": 789,
+    "sizes": ["M", "L", "XL", "XXL"],
     "image": 
     ["majesticMenShirt/71g8RmNlBrL._SY741_.jpg",
     " majesticMenShirt/61HS9pA4z7L._SY741_.jpg",
@@ -281,6 +301,7 @@
     "description": "High-top puma sneakers for casual wear.",
     "tags": ["sneakers", "puma", "casual"],
     "price": 3999,
+    "sizes": ["S", "M", "L", "XXL"],
     "image": ["PumaSneakers/41035zzA7gL._SY695_.jpg",
     "PumaSneakers/61tXZcnFDPL._SY695_.jpg",
     "PumaSneakers/51nQyC7RQvL._SY695_.jpg",
@@ -295,6 +316,7 @@
     "description": "Premium Cotton, Pre-Washed for extremely soft finish and No Shrinkage Post Washing",
     "tags": ["full shirt", "Dennish ling0", "cotton", "Maroon"],
     "price": 960,
+    "sizes": ["S", "M", "L", "XXL"],
     "image": 
     ["DennishLingo/61MOj5oxLgL._SY741_.jpg",
     "DennishLingo/61jNjTEHFCL._SY741_.jpg",
@@ -311,6 +333,7 @@
     "description": "Snap-button pockets help keep your gear secure. The jacket can be packed into the side pocket for easy, on-the-go carrying.",
     "tags": ["full jacket", "Nike", "Polyester", "black"],
     "price": 3690,
+    "sizes": [ "M", "L", "XL", "XXL"],
     "image": 
     ["NikeJackets/AS+M+NK+DF+FORM+HD+JKT.avif",
     "NikeJackets/AS+M+NK+DF+FORM+HD+JKT (3).avif",
@@ -327,6 +350,7 @@
     "description": "Cotton High-rise Button and zip fly closure Four pockets Stonewashed and whiskered Denim weave ",
     "tags": ["U.S. POLO ASSN WOMEN JEAN", "U.S. POLO ASSN", "COTTON", "black"],
     "price": 1169,
+    "sizes": ["28","30", "32", "34", "36"],
     "image": 
    ["women-jeans/jeanw1/81Bl69uU1vL._SX569_.jpg",
     "women-jeans/jeanw1/81eBWSA-9cL._SX569_.jpg",
@@ -343,6 +367,7 @@
     "description": "Cotton High-rise Button and zip fly closure Four pockets Stonewashed and whiskered Denim weave ",
     "tags": ["U.S. POLO ASSN WOMEN JEAN", "U.S. POLO ASSN", "COTTON"],
     "price": 1169,
+    "sizes": ["28","30", "32", "34", "36"],
     "image": 
    ["women-jeans/jeanw1/81nG93ETL2L._SX569_.jpg",
     "women-jeans/jeanw1/81W8VJs95FL._SX569_.jpg",
@@ -359,6 +384,7 @@
     "description": "Cotton High-rise Button and zip fly closure Four pockets Stonewashed and whiskered Denim weave ",
     "tags": ["U.S. POLO ASSN WOMEN JEAN", "U.S. POLO ASSN", "COTTON"],
     "price": 1415,
+    "sizes": ["28","30", "32", "34", "36"],
     "image": 
    ["women-jeans/jeanw2/51nWOTjHCfL._SX569_.jpg",
     "women-jeans/jeanw2/81W6fOzkyKL._SX569_.jpg",
@@ -376,6 +402,7 @@
     "description": "Cotton High-rise Button and zip fly closure Four pockets Stonewashed and whiskered Denim weave ",
     "tags": ["U.S. POLO ASSN WOMEN JEAN", "U.S. POLO ASSN", "COTTON"],
     "price": 1415,
+    "sizes": ["28","30", "32", "34", "36"],
     "image": 
    ["women-jeans/jeanw2/71r0WVHEmoL._SX569_.jpg",
     "women-jeans/jeanw2/71NUoqccdSL._SX569_.jpg",
@@ -392,6 +419,7 @@
     "description": "High rise waist Button and zip fly closure Five-pocket styling Stone washed Denim weave",
     "tags": ["U.S. POLO ASSN WOMEN JEAN", "U.S. POLO ASSN", "COTTON"],
     "price": 1415,
+    "sizes": ["28","30", "32", "34", "36"],
     "image": 
    ["women-jeans/jeanw2/818NOSOhxqL._SX569_.jpg",
     "women-jeans/jeanw2/81-FDivYBOL._SX569_.jpg",
@@ -408,6 +436,7 @@
     "description": "High rise waist Button and zip fly closure Five-pocket styling Stone washed Denim weave",
     "tags": ["U.S. POLO ASSN WOMEN JEAN", "U.S. POLO ASSN", "COTTON"],
     "price": 1405,
+    "sizes": ["28","30", "32", "34", "36"],
     "image": 
    ["women-jeans/jeanw2/61cC9Stm9nL._SX569_.jpg",
     "women-jeans/jeanw2/61LqyuXHy-L._SX569_.jpg",
@@ -425,6 +454,7 @@
     "description": "Snap-button pockets help keep your gear secure. The jacket can be packed into the side pocket for easy, on-the-go carrying.",
     "tags": ["full jacket", "Polyester", "Beige"],
     "price": 490,
+    "sizes": ["6", "7", "8", "9", "10"],
     "image": 
     ["svaarClogs/svaarSet1/61SgyYyu4ZL._SY695_.jpg",
     "svaarClogs/svaarSet1/61n0JhRQ+JL._SY695_.jpg",
@@ -442,6 +472,7 @@
     "description": "Snap-button pockets help keep your gear secure. The jacket can be packed into the side pocket for easy, on-the-go carrying.",
     "tags": ["full jacket", "Polyester", "black"],
     "price": 490,
+    "sizes": ["6", "7", "8", "9", "10"],
     "image": 
     ["svaarClogs/svaarSet1/71H7q-CYoIL._SY695_.jpg",
     "svaarClogs/svaarSet1/617agFChCzL._SY695_.jpg",
@@ -458,6 +489,7 @@
     "description": "Snap-button pockets help keep your gear secure. The jacket can be packed into the side pocket for easy, on-the-go carrying.",
     "tags": ["full jacket", "Polyester", "black"],
     "price": 490,
+    "sizes": ["6", "7", "8", "9", "10"],
     "image": 
     ["svaarClogs/svaarSet1/61fW97uH2qL._SY695_.jpg",
     " svaarClogs/svaarSet1/71a3I3tf5rL._SY695_.jpg",
@@ -475,6 +507,7 @@
     "description": "Snap-button pockets help keep your gear secure. The jacket can be packed into the side pocket for easy, on-the-go carrying.",
     "tags": ["svaar", "clogs"],
     "price": 490,
+    "sizes": ["6", "7", "8", "9", "10"],
     "image": 
     ["svaarClogs/svaarSet1/719AC993yxL._SY695_.jpg",
     " svaarClogs/svaarSet1/719QS0n0oTL._SY695_.jpg",
@@ -491,6 +524,7 @@
     "description": "Fabric: Non-Stretchable 100% Pure Cotton Stretchability : Non-Stretch; Pattern: Solid ",
     "tags": ["cotton men jeans", "black"],
     "price": 649,
+    "sizes": ["30", "32", "34", "36"],
     "image": 
    ["jeansMen/jeansm1/511uheW-+sL._SY741_.jpg",
     "jeansMen/jeansm1/51jXOFStPRL._SX679_.jpg",
@@ -507,6 +541,7 @@
     "description": "Fabric: Non-Stretchable 100% Pure Cotton Stretchability : Non-Stretch; Pattern: Solid ",
     "tags": ["cotton men jeans", "black"],
     "price": 805,
+    "sizes": ["30", "32", "34", "36"],
     "image": 
    ["jeansMen/jeansm1/61JQdkA80WL._SY741_.jpg",
     "jeansMen/jeansm1/61qgkNvipNL._SX679_.jpg",
@@ -522,6 +557,7 @@
     "description": "Fabric: Non-Stretchable 100% Pure Cotton Stretchability : Non-Stretch; Pattern: Solid ",
     "tags": ["cotton men jeans", "Dark blue"],
     "price": 798,
+    "sizes": ["30", "32", "34", "36"],
     "image": 
    ["jeansMen/jeansm1/61lLEn-uG-L._SX679_.jpg",
     "jeansMen/jeansm1/61XNr3LVVwL._SY741_.jpg",
@@ -538,6 +574,7 @@
     "description": "Fabric: Non-Stretchable 100% Pure Cotton Stretchability : Non-Stretch; Pattern: Solid ",
     "tags": ["cotton men jeans", "Light grey"],
     "price": 715,
+    "sizes": ["30", "32", "34", "36"],
     "image": 
    ["jeansMen/jeansm1/61q00tk+s5L._SY741_.jpg",
     "jeansMen/jeansm1/61h1TRxhGhL._SY741_.jpg",
@@ -553,6 +590,7 @@
     "description": "Fabric: Non-Stretchable 100% Pure Cotton Stretchability : Non-Stretch; Pattern: Solid ",
     "tags": ["t-shirt women"],
     "price": 695,
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "image": 
    ["tshirtWomen/TW/Screenshot 2025-09-20 131034.png",
     "tshirtWomen/TW/Screenshot 2025-09-20 131310.png",
@@ -568,6 +606,7 @@
     "description": "Fabric: Non-Stretchable 100% Pure Cotton Stretchability : Non-Stretch; Pattern: Solid ",
     "tags": ["t-shirt women"],
     "price": 695,
+    "sizes": ["S", "L", "XL", "XXL"],
     "image": 
    ["tshirtWomen/TW/Screenshot 2025-09-20 131820.png ",
     "tshirtWomen/TW/Screenshot 2025-09-20 131909.png ",
@@ -582,6 +621,7 @@
     "sub_category": "t-shirt for women",
     "description": "Fabric: Non-Stretchable 100% Pure Cotton Stretchability : Non-Stretch; Pattern: Solid ",
     "tags": ["t-shirt women"],
+    "sizes": ["S", "M", "L", "XXL"],
     "price": 695,
     "image": 
    ["tshirtWomen/TW/Screenshot 2025-09-20 133143.png",
@@ -599,6 +639,7 @@
     "description": " ",
     "tags": ["trousers", "men", "man", "trousers for men"],
     "price": 695,
+    "sizes": ["30", "32", "34", "36", "38", "40"],
     "image": 
    ["TrousersMen/TrousersM2/Screenshot 2025-09-20 115922.png",
     "TrousersMen/TrousersM2/Screenshot 2025-09-20 120031.png"
@@ -614,6 +655,7 @@
     "description": "Bewakoof loose fit white trouser for men",
     "tags": ["trousers", "men", "man", "trousers for men"],
     "price": 1499,
+    "sizes": ["30", "32", "34", "36", "38", "40", "42"],
     "image": 
    ["TrousersMen/TrousersM2/Screenshot 2025-09-20 120345.png",
     "TrousersMen/TrousersM2/Screenshot 2025-09-20 120449.png",
@@ -631,6 +673,7 @@
     "description": "Bewakoof loose fit white trouser for men",
     "tags": ["trousers", "men", "man", "trousers for men"],
     "price": 1499,
+    "sizes": ["30", "32", "34", "36", "38", "40", "42"],
     "image": 
    ["TrousersMen/TrousersM2/Screenshot 2025-09-20 120957.png",
     "TrousersMen/TrousersM2/Screenshot 2025-09-20 121024.png",
@@ -647,6 +690,7 @@
     "description": "Bewakoof loose fit white trouser for men",
     "tags": ["trousers", "men", "man", "trousers for men"],
     "price": 1499,
+    "sizes": ["30", "32", "34", "36", "38", "40"],
     "image": 
    ["TrousersMen/TrousersM2/Screenshot 2025-09-20 120652.png",
     "TrousersMen/TrousersM2/Screenshot 2025-09-20 120730.png",

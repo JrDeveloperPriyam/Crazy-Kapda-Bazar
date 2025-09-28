@@ -23,6 +23,7 @@ function renderProductDetails(product) {
   document.getElementById("detailDescription").textContent = product.description;
   document.getElementById("detailPrice").textContent = product.price;
   document.getElementById("breadcrumbCategory").textContent = product.sub_category;
+   renderSizes(product.sizes);
 }
 
 function renderThumbnails(images) {
@@ -64,25 +65,26 @@ function renderColorSwatches(data, product) {
 
   variants.forEach(variant => {
     const wrapper = document.createElement("div");
-    wrapper.className = "swatch-wrapper";
+    wrapper.className = "color-box-wrapper";
 
-    const swatch = document.createElement("span");
-    swatch.className = "swatch";
-    swatch.title = variant.color || variant.colo || "Unknown";
+    const img = document.createElement("img");
+    img.src = variant.image[0]; // First image of the variant
+    img.alt = variant.color || variant.colo || "Variant";
+    img.className = "color-box";
 
     if (variant.id === product.id) {
-      swatch.classList.add("selected");
+      img.classList.add("selected");
     }
 
-    swatch.addEventListener("click", () => {
+    img.addEventListener("click", () => {
       window.location.href = `product.html?id=${variant.id}`;
     });
 
     const label = document.createElement("span");
-    label.className = "swatch-label";
+    label.className = "color-label";
     label.textContent = variant.color || variant.colo || "Unknown";
 
-    wrapper.appendChild(swatch);
+    wrapper.appendChild(img);
     wrapper.appendChild(label);
     colorContainer.appendChild(wrapper);
   });
@@ -139,3 +141,26 @@ document.getElementById("shareBtn").addEventListener("click", () => {
     alert("Sharing not supported on this device.");
   }
 });
+
+
+
+function renderSizes(sizesArray) {
+  const sizeContainer = document.querySelector(".size-options");
+  const sizeSection = document.getElementById("sizeSection");
+
+  // Hide section if no sizes available
+  if (!sizesArray || sizesArray.length === 0) {
+    sizeSection.style.display = "none";
+    return;
+  }
+
+  sizeContainer.innerHTML = ""; // Clear previous buttons
+
+  sizesArray.forEach(size => {
+    const btn = document.createElement("button");
+    btn.textContent = size;
+    sizeContainer.appendChild(btn);
+  });
+}
+
+
