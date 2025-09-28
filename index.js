@@ -28,8 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-
-
 ////////////////////////////// Small box container ////////////////////////////////////////
 
   const sliders = document.querySelectorAll('.bottom-sub-loths.slider');

@@ -56,6 +56,7 @@ function renderThumbnails(images) {
   });
 }
 
+
 function renderColorSwatches(data, product) {
   const colorContainer = document.querySelector(".color-swatches");
   const variants = data.filter(p => p.group_id === product.group_id);
@@ -86,6 +87,8 @@ function renderColorSwatches(data, product) {
     colorContainer.appendChild(wrapper);
   });
 }
+
+
 
 function renderSimilarProducts(data, product) {
   const currentSub = product.sub_category?.trim().toLowerCase();
