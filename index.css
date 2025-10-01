@@ -93,8 +93,8 @@ body{
 
 /*////////////////////////////////////////////////////////////*/
 .logo {
-  font-size: 17px;
-  font-weight: bold;
+  font-size: 24px;
+  font-weight: 800;
   letter-spacing: 1px;
 }
 .search-bar {
@@ -651,7 +651,7 @@ body{
   width: 100%;
   aspect-ratio: 1 / 1;   /* keeps square shape */
   object-fit: cover;
-  border-radius: 6px;
+  
 
  
 }
