@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
   const PER_PAGE = 10;
   let products = [];
@@ -88,4 +89,4 @@ document.addEventListener('DOMContentLoaded', () => {
 document.getElementById('searchBox').addEventListener('focus', () =>{
   //redirect to the search Page
   window.location.href = "search.html";
-})
+});
