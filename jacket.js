@@ -1,13 +1,9 @@
-// shirts.js
+// jackets.js
 
 document.addEventListener('DOMContentLoaded', () => {
-  // ——— Config & State ———
   const PER_PAGE = 10;
-  let allProducts = [];
-  let filtered    = [];
-  let page        = 1;
+  let allProducts = [], filtered = [], page = 1;
 
-  // ——— DOM References ———
   const container    = document.getElementById('cloth-container');
   const loader       = document.getElementById('loader');
   const sentinel     = document.getElementById('scroll-sentinel');
@@ -19,25 +15,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const popupWrapper = document.getElementById('popupContainer');
   const popupInner   = document.getElementById('popupContent');
 
-  // ——— Search Redirect ———
+  // Search redirect
   searchBox?.addEventListener('focus', () => {
     window.location.href = 'search.html';
   });
 
-  // ——— Desktop Filters ———
+  // Desktop filters
   priceInputs.forEach(r => r.addEventListener('change', applyFilters));
   genderInputs.forEach(r => r.addEventListener('change', applyFilters));
   sortSelect?.addEventListener('change', applyFilters);
 
-  // ——— Mobile Bottom Bar ———
+  // Mobile bottom bar
   mobileBtns.forEach(btn =>
     btn.addEventListener('click', () => openPopup(btn.dataset.toggle))
   );
 
-  // ——— Mobile Pop-up Delegation ———
+  // Mobile popup delegation
   popupInner.addEventListener('change', e => {
     const t = e.target;
-    // Radio change
     if (t.tagName === 'INPUT' && t.type === 'radio') {
       const group = Array.from(popupInner.querySelectorAll(`input[name="${t.name}"]`));
       const idx   = group.indexOf(t);
@@ -46,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
       popupWrapper.classList.remove('active');
       applyFilters();
     }
-    // Sort dropdown change
     if (t.tagName === 'SELECT') {
       sortSelect.value = t.value;
       popupWrapper.classList.remove('active');
@@ -54,30 +48,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ——— Intersection Observer for Infinite-Scroll ———
+  // Infinite‐scroll observer
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => e.isIntersecting && loadMore());
   }, { rootMargin: '200px' });
 
-  // ——— Fetch & Initialize ———
+  // Fetch & init
   fetch('data/product.json')
     .then(res => {
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       return res.json();
     })
     .then(data => {
-      // Only shirts (exclude t-shirts)
       allProducts = data.filter(p => {
-        const sub = (p.sub_category || '').toLowerCase();
-        return sub.includes('shirt') && !sub.includes('t-shirt');
+        const sub = (p.sub_category||'').toLowerCase();
+        return sub.includes('jacket');
       });
-
-      if (!allProducts.length) {
+      if (allProducts.length === 0) {
         container.innerHTML =
-          '<p class="no-items">No shirts found. Try another category.</p>';
+          '<p class="no-items">No jackets found. Try another category.</p>';
         return;
       }
-
       applyFilters();
     })
     .catch(err => {
@@ -86,20 +77,18 @@ document.addEventListener('DOMContentLoaded', () => {
         '<p class="no-items">Failed to load products.</p>';
     });
 
-  // ——— Core: Filter → Sort → Render ———
+  // Core filter→sort→render
   function applyFilters() {
     const { min, max } = priceInputs.find(i => i.checked).dataset;
     const genderVal    = genderInputs.find(i => i.checked).value.toLowerCase();
-
     filtered = allProducts.filter(p => {
       const inPrice  = p.price >= +min && p.price <= +max;
-      const inGender = genderVal === 'all'
+      const inGender = genderVal==='all'
         ? true
-        : p.gender?.toLowerCase() === genderVal;
+        : p.gender?.toLowerCase()===genderVal;
       return inPrice && inGender;
     });
 
-    // Out-of-Stock
     if (filtered.length === 0) {
       container.innerHTML =
         '<p class="no-items">Out of Stock — no items match your filters.</p>';
@@ -110,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     applySort();
     page = 1;
-
     container.innerHTML = filtered
       .slice(0, PER_PAGE)
       .map(renderCard)
@@ -122,23 +110,20 @@ document.addEventListener('DOMContentLoaded', () => {
     if (needsMore) observer.observe(sentinel);
   }
 
-  // ——— Sort Helper ———
+  // Sort helper
   function applySort() {
-    const [key, order] = (sortSelect.value || 'default').split('-');
-    if (key === 'price') {
-      filtered.sort((a, b) =>
-        order === 'asc' ? a.price - b.price : b.price - a.price
-      );
-    } else if (key === 'name') {
-      filtered.sort((a, b) =>
-        order === 'asc'
-          ? a.name.localeCompare(b.name)
-          : b.name.localeCompare(a.name)
+    const [key, order] = (sortSelect.value||'default').split('-');
+    if (key==='price') {
+      filtered.sort((a,b)=> order==='asc' ? a.price-b.price : b.price-a.price);
+    } else if (key==='name') {
+      filtered.sort((a,b)=> order==='asc'
+        ? a.name.localeCompare(b.name)
+        : b.name.localeCompare(a.name)
       );
     }
   }
 
-  // ——— Infinite-Scroll Loader ———
+  // Load more
   function loadMore() {
     const start = page * PER_PAGE;
     if (start >= filtered.length) {
@@ -147,19 +132,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     loader.classList.remove('hidden');
     setTimeout(() => {
-      filtered
-        .slice(start, start + PER_PAGE)
-        .forEach(p => container.insertAdjacentHTML('beforeend', renderCard(p)));
+      filtered.slice(start, start+PER_PAGE)
+        .forEach(p=>container.insertAdjacentHTML('beforeend', renderCard(p)));
       page++;
       loader.classList.add('hidden');
     }, 200);
   }
 
-  // ——— Render Product Card ———
+  // Render card with microdata
   function renderCard(p) {
     const imgFile = Array.isArray(p.image) ? p.image[0].trim() : '';
     const imgUrl  = imgFile.startsWith('http') ? imgFile : imgFile;
-
     return `
       <article class="product-card"
                itemscope itemtype="https://schema.org/Product">
@@ -182,18 +165,17 @@ document.addEventListener('DOMContentLoaded', () => {
       </article>`;
   }
 
-  // ——— Open Mobile Pop-up ———
+  // Open mobile popup
   function openPopup(type) {
     let source;
-    if (type === 'price')  source = document.getElementById('price-filter');
-    if (type === 'gender') source = document.getElementById('gender-filter');
-    if (type === 'sort')   source = document.querySelector('.sort-bar');
-
+    if (type==='price')  source = document.getElementById('price-filter');
+    if (type==='gender') source = document.getElementById('gender-filter');
+    if (type==='sort')   source = document.querySelector('.sort-bar');
     popupInner.innerHTML =
-      `<h3>${type.charAt(0).toUpperCase() + type.slice(1)}</h3>`;
+      `<h3>${type.charAt(0).toUpperCase()+type.slice(1)}</h3>`;
     const clone = source.cloneNode(true);
     clone.removeAttribute('id');
-    if (type === 'sort') clone.querySelector('select').id = '';
+    if (type==='sort') clone.querySelector('select').id = '';
     popupInner.appendChild(clone);
     popupWrapper.classList.add('active');
   }

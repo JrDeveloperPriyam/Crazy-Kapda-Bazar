@@ -2,11 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta 
-    name="viewport" 
-    content="width=device-width, initial-scale=1.0"
-  />
-  <title>Crazy Kapda Bazaar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>T-Shirts for men and women - But T-Shirts for men and women online | Crazy Kapda Bazaar</title>
   <link rel="stylesheet" href="allpage.css" />
   <script src="tshirts.js" defer></script>
 </head>
@@ -17,7 +14,7 @@
       <input type="text" placeholder="Search for clothes…" id="searchBox" />
     </div>
     <nav class="nav-links">
-      <a href="#">About</a>
+      <a href="shopabout.html">About</a>
       <a href="#">Clothing</a>
       <a href="#">Services</a>
       <a href="#">Location</a>
@@ -25,17 +22,86 @@
     <button class="menu-btn-mobile">☰</button>
   </header>
 
-  <section class="hero-banner"></section>
-
   <main class="main-container">
-    <section id="cloth-container" class="cloth-container">
-      <!-- JavaScript will inject .product-card items here -->
-    </section>
+    <div class="sub-container">
+      <section class="hero-banner">
+        <img src="ShopAbout/clothing-store-exterior-featuring-large-glass-facade-illuminated-signage-th-text-gelug-mannequins-display-various-371057012.webp" alt="">
+      </section>
+      <section id="cloth-container" class="cloth-container"></section>
+    </div>
 
-    <!-- sentinel + loader -->
+    <aside class="left-container">
+      <!-- ✅ Fixed: only one price-filter ID -->
+      <div id="price-filter">
+        <h3>Filter by Price</h3>
+        <div class="price-options">
+          <label class="price-option">
+            <input type="radio" name="price" data-min="0" data-max="Infinity" checked />
+            <span class="checkbox"></span><span class="label-text">All</span>
+          </label>
+          <label class="price-option">
+            <input type="radio" name="price" data-min="0" data-max="999" />
+            <span class="checkbox"></span><span class="label-text">Under ₹1000</span>
+          </label>
+          <label class="price-option">
+            <input type="radio" name="price" data-min="1000" data-max="2000" />
+            <span class="checkbox"></span><span class="label-text">₹1000–₹2000</span>
+          </label>
+          <label class="price-option">
+            <input type="radio" name="price" data-min="2000" data-max="3000" />
+            <span class="checkbox"></span><span class="label-text">₹2000–₹3000</span>
+          </label>
+          <label class="price-option">
+            <input type="radio" name="price" data-min="3001" data-max="999999" />
+            <span class="checkbox"></span><span class="label-text">Above ₹3000</span>
+          </label>
+        </div>
+      </div>
+
+      <div id="gender-filter">
+        <h3>Filter by Gender</h3>
+        <div class="price-options">
+          <label class="price-option">
+            <input type="radio" name="gender" value="all" checked />
+            <span class="checkbox"></span><span class="label-text">All</span>
+          </label>
+          <label class="price-option">
+            <input type="radio" name="gender" value="male" />
+            <span class="checkbox"></span><span class="label-text">Men</span>
+          </label>
+          <label class="price-option">
+            <input type="radio" name="gender" value="female" />
+            <span class="checkbox"></span><span class="label-text">Women</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="sort-bar">
+        <label for="sortSelect">Sort by:</label>
+        <select id="sortSelect">
+          <option value="default">Default</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="name-asc">Name: A → Z</option>
+          <option value="name-desc">Name: Z → A</option>
+        </select>
+      </div>
+    </aside>
+
     <div id="scroll-sentinel"></div>
     <div id="loader" class="loader hidden"></div>
-  </main>
 
+    <!-- ✅ Mobile Bottom Filter Bar -->
+    <div class="mobile-filter-bar">
+      <button data-toggle="price">Price</button>
+      <button data-toggle="gender">Gender</button>
+      <button data-toggle="sort">Sort</button>
+    </div>
+
+    <!-- ✅ Mobile Filter Popup -->
+    <div class="mobile-filter-popup" id="popupContainer">
+      <div class="popup-content" id="popupContent"></div>
+    </div>
+  </main>
 </body>
 </html>

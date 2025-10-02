@@ -82,10 +82,11 @@ body {
 .hero-banner {
   margin-top: 70px; /* sits below navbar */
   width: 100%;
-  height: clamp(200px, 50vh, 600px);
-  background: url("ShopAbout/clothing-store-exterior-featuring-large-glass-facade-illumina\
-ted-signage-th-text-gelug-mannequins-display-various-371057012.webp")
-              center/cover no-repeat;
+  height: 30vw;
+}
+.hero-banner img{
+  width: 100%;
+  height: 100%;
 }
 @media (max-width: 768px) {
   .hero-banner {
@@ -97,11 +98,44 @@ ted-signage-th-text-gelug-mannequins-display-various-371057012.webp")
     height: clamp(150px, 35vh, 350px);
   }
 }
+.left-container{
+  width: 18%;
+  height: Auto;
+  margin-top: 70px;
+  width: 20%;
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  right: 0;
+  padding: 10px;
+  height: 90vh;
+}
+@media (max-width:820px) {
+    .left-container{
+      display: none;
+    }
+}
+
+/* add space above the Gender filter */
+#gender-filter {
+  margin-top: 20px;   /* adjust value as needed */
+  padding-top: 14px;
+}
+
 
 /* MAIN CONTAINER & GRID */
 .main-container {
-  margin-top: 70px; /* offset for navbar */
+  display: flex;
+  margin-top: 5px; /* offset for navbar */
   padding-bottom: 2rem;
+  width: 100%;
+}
+.sub-container{
+  width: 80%;
+}
+@media (max-width:820px) {
+  .sub-container{
+    width: 100%;
+  }
 }
 .cloth-container {
   display: grid;
@@ -127,6 +161,7 @@ ted-signage-th-text-gelug-mannequins-display-various-371057012.webp")
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 .product-card img {
   width: 100%;
@@ -174,7 +209,6 @@ ted-signage-th-text-gelug-mannequins-display-various-371057012.webp")
   display: none;
 }
 .loader::after {
-  content: "";
   display: inline-block;
   width: 32px;
   height: 32px;
@@ -186,5 +220,171 @@ ted-signage-th-text-gelug-mannequins-display-various-371057012.webp")
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+
+#price-filter {
+  max-width: 360px;
+  font-family: sans-serif;
+}
+
+#price-filter h3 {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.price-options {
+  flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  
+  
+}
+
+.price-option {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.price-option input {
+  display: none;
+}
+
+.price-option .checkbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  position: relative;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.price-option .label-text {
+  font-size: 14px;
+  color: #000;
+}
+
+/* Checked (active) state via sibling selector */
+.price-option input:checked ~ .checkbox {
+  background-color: #000;
+  border-color: #000;
+}
+
+.price-option input:checked ~ .checkbox::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 6px;
+  height: 12px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.price-option input:checked ~ .label-text {
+  color: #000000;
+}
+
+.sort-bar {
+  display: flex;
+  align-items: center;
+  margin: 10px 1rem 0;
+  gap: 8px;
+  font-size: 0.95rem;
+  border-top: 1px solid grey;
+  padding-top: 12px;
+}
+
+.sort-bar select {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+}
+
+#gender-filter{
+  border-top: 1px solid gray;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*////////////////////////////////////////////////*/
+
+
+@media (max-width: 820px) {
+  .mobile-filter-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    z-index: 999;
+  }
+
+  .mobile-filter-bar button {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    background: #eee;
+    margin: 0 6px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .mobile-filter-popup {
+    position: fixed;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    max-height: 60vh;
+    background: #fff;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    z-index: 998;
+  }
+
+  .mobile-filter-popup.active {
+    transform: translateY(0);
+  }
+
+  .popup-content {
+    padding: 1rem;
+  }
+
+  .popup-content h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
   }
 }

@@ -93,11 +93,19 @@ function renderColorSwatches(data, product) {
 
 
 function renderSimilarProducts(data, product) {
-  const currentSub = product.sub_category?.trim().toLowerCase();
-  const similarProducts = data.filter(p =>
-    p.sub_category?.trim().toLowerCase() === currentSub &&
-    p.id !== product.id
-  );
+  const currentTags = Array.isArray(product.tags)
+    ? product.tags.map(t => t.trim().toLowerCase())
+    : [product.tags.trim().toLowerCase()];
+
+  const similarProducts = data.filter(p => {
+    if (p.id === product.id) return false;
+
+    const otherTags = Array.isArray(p.tags)
+      ? p.tags.map(t => t.trim().toLowerCase())
+      : [p.tags?.trim().toLowerCase()];
+
+    return otherTags.some(tag => currentTags.includes(tag));
+  });
 
   const similarGrid = document.getElementById("similarGrid");
   similarGrid.innerHTML = "";
@@ -119,6 +127,7 @@ function renderSimilarProducts(data, product) {
     });
   }
 }
+
 
 ////////////// sHARE AND COPY LINK ////////////////////// 
 document.getElementById("copyLinkBtn").addEventListener("click", () => {
