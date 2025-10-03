@@ -124,6 +124,8 @@ function renderSimilarProducts(data, product) {
   }
 }
 
+
+
 // Share and Copy
 document.getElementById("copyLinkBtn").addEventListener("click", () => {
   const url = window.location.href;
@@ -174,6 +176,7 @@ function renderSizes(sizesArray) {
   });
 }
 
+
 document.getElementById("orderNowBtn").addEventListener("click", () => {
   if (!selectedSize) {
     alert("⚠️ Please select a size before ordering.");
@@ -181,9 +184,9 @@ document.getElementById("orderNowBtn").addEventListener("click", () => {
   }
 
   const productName = document.getElementById("detailName").textContent;
-  const productImage = document.getElementById("mainImage").src;
+  const productURL = window.location.href;
 
-  const message = `Hi, I want to order:\n\n🧥 *${productName}*\n📏 Size: ${selectedSize}\n🖼️ Poster: ${productImage}`;
+  const message = `Hi, I want to order:\n\n🧥 *${productName}*\n📏 Size: ${selectedSize}\n🔗 Link:\n${productURL}`;
   const encodedMessage = encodeURIComponent(message);
   const whatsappURL = `https://wa.me/919394708768?text=${encodedMessage}`;
 
