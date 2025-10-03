@@ -54,7 +54,9 @@
 </head>
 <body>
   <header class="navbar">
-    <div class="logo">Crazy Kapda Bazaar</div>
+    <div class="logo">
+ <video src="posters/crazy-kapda-bazaar-logo.mp4" autoplay loop muted></video>
+    </div>
     <div class="search-bar">
       <input type="text" placeholder="Search for clothes…" id="searchBox" />
     </div>
@@ -64,8 +66,40 @@
       <a href="#">Services</a>
       <a href="#">Location</a>
     </nav>
-    <button class="menu-btn-mobile">☰</button>
+    <button class="menu-btn-mobile">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+      </svg>
+    </button>
   </header>
+
+   <!-- Sidebar -->
+  <div id="sidebar-mobile" class="sidebar-mobile">
+    <button class="close-btn-mobile">&times;</button>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="ShopAbout.html">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact to Shop</a></li>
+ <div class="mobile-map">
+  <h4>Our Shop Location</h4>
+<iframe
+  src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d373.22099114853427!2d94.34168477777479!3d27.134368890609313!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1758383296900!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+  width="100%"
+  height="300"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+</div>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    </ul>
+  </div>
+  <!-- Overlay -->
+  <div id="overlay-mobile" class="overlay-mobile"></div>
+    <!----------------------------------- Main ---------------------------------->
 
   <main class="main-container">
     <div class="sub-container">

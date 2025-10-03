@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
   const categoryFilter = document.getElementById('categoryFilter');
   const productList = document.getElementById('productList');
@@ -6,7 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const loadingSpinner = document.getElementById('loadingSpinner');
 
   let allProducts = [];
+  let visibleProducts = [];
+  let currentIndex = 0;
   let fuse;
+
+  const PRODUCTS_PER_BATCH = 12;
 
   function showLoading(show) {
     loadingSpinner.style.display = show ? 'block' : 'none';
@@ -16,10 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const query = searchInput.value.trim().toLowerCase();
     const selectedCategory = categoryFilter.value.toLowerCase();
 
-    let filteredProducts = allProducts;
+    let filtered = allProducts;
 
     if (selectedCategory) {
-      filteredProducts = filteredProducts.filter(product => {
+      filtered = filtered.filter(product => {
         const categoryField = product.category;
         if (Array.isArray(categoryField)) {
           return categoryField.map(c => c.toLowerCase()).includes(selectedCategory);
@@ -33,23 +36,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (query && fuse) {
       const results = fuse.search(query);
       const matchedItems = results.map(result => result.item);
-      filteredProducts = filteredProducts.filter(product =>
-        matchedItems.includes(product)
-      );
+      filtered = filtered.filter(product => matchedItems.includes(product));
     }
 
-    showProducts(filteredProducts);
+    visibleProducts = filtered;
+    currentIndex = 0;
+    productList.innerHTML = '';
+    loadMore(); // Load first batch
   }
 
-  function showProducts(products) {
-    productList.innerHTML = '';
-
-    if (products.length === 0) {
-      productList.innerHTML = `<p class="no-results">No products found. May be out of stock.</p>`;
-      return;
-    }
-
-    products.forEach(product => {
+  function loadMore() {
+    const nextBatch = visibleProducts.slice(currentIndex, currentIndex + PRODUCTS_PER_BATCH);
+    nextBatch.forEach(product => {
       const card = document.createElement('div');
       card.className = 'product-card';
       card.innerHTML = `
@@ -61,19 +59,34 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
       productList.appendChild(card);
     });
+
+    currentIndex += PRODUCTS_PER_BATCH;
+
+    if (currentIndex >= visibleProducts.length && visibleProducts.length === 0) {
+      productList.innerHTML = `<p class="no-results">No products found. May be out of stock.</p>`;
+    }
+  }
+
+  function handleScroll() {
+    const scrollY = window.scrollY;
+    const viewportHeight = window.innerHeight;
+    const fullHeight = document.body.offsetHeight;
+
+    if (scrollY + viewportHeight >= fullHeight - 100) {
+      loadMore();
+    }
   }
 
   searchInput.addEventListener('input', applyFilters);
   categoryFilter.addEventListener('change', applyFilters);
+  window.addEventListener('scroll', handleScroll);
 
-  // Fetch products and initialize Fuse
   showLoading(true);
   fetch('./data/product.json')
     .then(response => response.json())
     .then(data => {
       showLoading(false);
       allProducts = data;
-      showProducts(allProducts);
 
       const options = {
         keys: ['name', 'description', 'category', 'sub_category', 'tags'],
@@ -83,13 +96,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
       fuse = new Fuse(allProducts, options);
 
-      // ✅ Now that Fuse is ready, check for auto-search
       const params = new URLSearchParams(window.location.search);
       const searchTerm = params.get('search');
 
       if (searchTerm) {
         searchInput.value = searchTerm;
-        applyFilters(); // 🔥 Trigger search directly
+        applyFilters();
+      } else {
+        visibleProducts = allProducts;
+        loadMore();
       }
     });
 });

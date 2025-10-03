@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const productId = params.get("id");
@@ -23,7 +22,7 @@ function renderProductDetails(product) {
   document.getElementById("detailDescription").textContent = product.description;
   document.getElementById("detailPrice").textContent = product.price;
   document.getElementById("breadcrumbCategory").textContent = product.sub_category;
-   renderSizes(product.sizes);
+  renderSizes(product.sizes);
 }
 
 function renderThumbnails(images) {
@@ -57,7 +56,6 @@ function renderThumbnails(images) {
   });
 }
 
-
 function renderColorSwatches(data, product) {
   const colorContainer = document.querySelector(".color-swatches");
   const variants = data.filter(p => p.group_id === product.group_id);
@@ -68,7 +66,7 @@ function renderColorSwatches(data, product) {
     wrapper.className = "color-box-wrapper";
 
     const img = document.createElement("img");
-    img.src = variant.image[0]; // First image of the variant
+    img.src = variant.image[0];
     img.alt = variant.color || variant.colo || "Variant";
     img.className = "color-box";
 
@@ -89,8 +87,6 @@ function renderColorSwatches(data, product) {
     colorContainer.appendChild(wrapper);
   });
 }
-
-
 
 function renderSimilarProducts(data, product) {
   const currentTags = Array.isArray(product.tags)
@@ -128,8 +124,7 @@ function renderSimilarProducts(data, product) {
   }
 }
 
-
-////////////// sHARE AND COPY LINK ////////////////////// 
+// Share and Copy
 document.getElementById("copyLinkBtn").addEventListener("click", () => {
   const url = window.location.href;
   navigator.clipboard.writeText(url)
@@ -151,25 +146,46 @@ document.getElementById("shareBtn").addEventListener("click", () => {
   }
 });
 
-
+// Size selection + Order Now
+let selectedSize = null;
 
 function renderSizes(sizesArray) {
   const sizeContainer = document.querySelector(".size-options");
   const sizeSection = document.getElementById("sizeSection");
 
-  // Hide section if no sizes available
   if (!sizesArray || sizesArray.length === 0) {
     sizeSection.style.display = "none";
     return;
   }
 
-  sizeContainer.innerHTML = ""; // Clear previous buttons
+  sizeContainer.innerHTML = "";
 
   sizesArray.forEach(size => {
     const btn = document.createElement("button");
     btn.textContent = size;
+
+    btn.addEventListener("click", () => {
+      selectedSize = size;
+      document.querySelectorAll(".size-options button").forEach(b => b.classList.remove("selected"));
+      btn.classList.add("selected");
+    });
+
     sizeContainer.appendChild(btn);
   });
 }
 
+document.getElementById("orderNowBtn").addEventListener("click", () => {
+  if (!selectedSize) {
+    alert("⚠️ Please select a size before ordering.");
+    return;
+  }
 
+  const productName = document.getElementById("detailName").textContent;
+  const productImage = document.getElementById("mainImage").src;
+
+  const message = `Hi, I want to order:\n\n🧥 *${productName}*\n📏 Size: ${selectedSize}\n🖼️ Poster: ${productImage}`;
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappURL = `https://wa.me/919394708768?text=${encodedMessage}`;
+
+  window.open(whatsappURL, "_blank");
+});

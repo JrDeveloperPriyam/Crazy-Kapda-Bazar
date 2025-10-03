@@ -353,3 +353,10 @@ main{
   color: #333;
   text-align: center;
 }
+
+.size-options button.selected {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: #000 !important;
+}
+

@@ -93,9 +93,12 @@ body{
 
 /*////////////////////////////////////////////////////////////*/
 .logo {
-  font-size: 24px;
-  font-weight: 800;
-  letter-spacing: 1px;
+  height: 100%;
+}
+.logo video{
+  height: 100%;
+  width: auto;
+
 }
 .search-bar {
   justify-content: center;
@@ -105,12 +108,12 @@ body{
   
 }
 .search-bar input {
-  background-color: #e9e5e5;
-  padding: 8px 12px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
   border-radius: 20px;
-  border: none;
-  outline: none;
+  border: 1px solid #ccc;
   width: 100%;
+  line-height: 1.5;
 }
 .nav-links {
   display: flex;
@@ -122,7 +125,7 @@ body{
   font-size: 14px;
   transition: 0.3s;
   text-decoration: none;
-  border: 1px solid rgb(0, 0, 0);
+ border: 1px solid #ccc;
   padding: 6px 10px;
   border-radius: 4px;
 }

@@ -198,3 +198,35 @@ document.addEventListener('DOMContentLoaded', () => {
     popupWrapper.classList.add('active');
   }
 });
+
+
+//////////////////// side bar mobile logic //////////////////////
+
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtnMobile = document.querySelector('.menu-btn-mobile');
+  const sidebarMobile = document.querySelector('#sidebar-mobile');
+  const overlayMobile = document.querySelector('#overlay-mobile');
+  const closeBtnMobile = document.querySelector('.close-btn-mobile');
+
+  if (menuBtnMobile && sidebarMobile && overlayMobile && closeBtnMobile) {
+    // Open menu
+    menuBtnMobile.addEventListener('click', () => {
+      sidebarMobile.classList.add('show');
+      overlayMobile.classList.add('show');
+    });
+
+    // Close on close button click
+    closeBtnMobile.addEventListener('click', () => {
+      sidebarMobile.classList.remove('show');
+      overlayMobile.classList.remove('show');
+    });
+
+    // Close when clicking outside
+    overlayMobile.addEventListener('click', () => {
+      sidebarMobile.classList.remove('show');
+      overlayMobile.classList.remove('show');
+    });
+  } else {
+    console.error("Mobile menu elements not found in DOM.");
+  }
+});
